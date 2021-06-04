@@ -4,7 +4,6 @@
 #include <assert.h>
 #include <ctype.h>
 #include <time.h>
-
 #include "fmvm.h"
 
 #define MAXLEN 100
