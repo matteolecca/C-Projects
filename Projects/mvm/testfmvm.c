@@ -79,7 +79,6 @@ int main(){
     assert(strcmp(result[0], "WAGENKNECHT") == 0);
     assert(strcmp(result[1], "BENEDIKT") == 0);
     free(result);
-
     printf("Basic MVM Tests ... Stop\n");
     return 0;
 }
