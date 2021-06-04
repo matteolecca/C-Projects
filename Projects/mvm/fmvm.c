@@ -4,7 +4,6 @@
 #include <assert.h>
 #include <math.h>
 #include <ctype.h>
-
 #include "fmvm.h"
 
 #define LETT 26
