@@ -20,8 +20,6 @@
                          /*until the same phonemes string or an empty cell is found*/
 
 
-
-
 /*The searching is faster but the insertion presents some bugs that I haven't manage to solve:*/
     /*Uses a fixed size array*/
     /*Seg fault appens if the user type a word not in the dictionary*/
