@@ -20,3 +20,6 @@ A sliding puzzle, sliding block puzzle, or sliding tile puzzle is a combination 
     </li>
 </ul>
 </section>
+<section>
+<p>*Please note that to find a solution the algorithm could take up to 10 minutes.</p>
+</section>
