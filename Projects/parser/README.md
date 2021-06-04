@@ -1,23 +1,13 @@
-<h1>HOMOPHONES</h1>
+<h1>PARSER</h1>
 <section>
 <p><strong>
-        A homophone is a word that is pronounced the same (to varying extent) as another word but differs in meaning
-    </strong>
+ A parser is a component of a compiler or interpreter, which parses the source code of a computer programming language to create some form of internal representation; the parser is a key step in the compiler frontend. Programming languages tend to be specified in terms of a deterministic context-free grammar because fast and efficient parsers can be written for them. For compilers, the parsing itself can be done in one pass or multiple passes – see one-pass compiler and multi-pass compiler.    </strong><br/>
 </p>
 <h2>The program</h2>
 <p>
-    This little programs takes as input a single word and a number representing the number of 
-    syllables, then checks for the relative homophones contained into the file cmudict.txt.
+    Further instruction of the parser implementation can be found in the Parsing.pdf file.
 </p>
-<h4>Example</h4>
-<p>
-   ./homophones -n 2 laboy <br/>
-   <br/>
-    LABOY = B OY1<br/>
-      |<br/>
-      V<br/>
-- LABOY - DEBOY - BOY - BOYE 
-</p>
+
 </section>
 <section>
 <h3>Run the program</h3>
