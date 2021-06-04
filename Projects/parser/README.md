@@ -31,6 +31,4 @@
             </ul>
         </li>
         </li>
-
-    </ul>
 </section>
