@@ -2,6 +2,8 @@
 #include <string.h>
 #include <stdio.h>
 #include <assert.h>
+#include <unistd.h>
+
 #define W 4
 #define H 3
 #define M 2
@@ -13,6 +15,12 @@ typedef enum isequal
   equal,
   notequal
 } isequal;
+
+typedef enum
+{
+  false,
+  true
+} bool;
 
 typedef struct node
 {
@@ -61,7 +69,8 @@ int createboards(Board *board, int i, int empty);
 Board *nextmove(char input[H][W], char target[H][W]);
 void freememory(Board *last);
 int isempty(Board *board);
-void printsolution(Board *solution);
+void printsolution(Board *solution, bool delay);
+void printsolution(Board *solution, bool delay);
 
 int main(int argc, char **argv)
 {
@@ -80,7 +89,9 @@ int main(int argc, char **argv)
     printf("wait...\n");
     last = nextmove(input, target);
     solution = findsolution(last);
-    printsolution(solution);
+    printsolution(solution, true);
+    sleep(2);
+    printsolution(solution, false);
     freememory(last);
   }
   else
@@ -223,7 +234,7 @@ Board *findsolution(Board *board)
 
   return solution;
 }
-void printsolution(Board *solution)
+void printsolution(Board *solution, bool delay)
 {
 
   int i = solution[0].counter;
@@ -235,10 +246,36 @@ void printsolution(Board *solution)
     index++;
     printf("Index:%d\n", index);
     printsquare(solution[i].square);
+    if (delay)
+    {
+      if (i != 0)
+      {
+        printf("\033[4A");
+      }
+    }
+    sleep(1);
+    fflush(stdout);
     i--;
+  }
+  if (delay)
+  {
+    printf("\nSOLVED\nBoard recap:\n");
+    sleep(1);
   }
 }
 
+void printsquare(char square[H][W])
+{
+  /*Print a 3x3 square*/
+  int i;
+
+  for (i = 0; i < H; i++)
+  {
+    printf("%s\n", square[i]);
+  }
+
+  fflush(stdout);
+}
 int isempty(Board *board)
 {
   return board == NULL;
@@ -414,18 +451,6 @@ isequal checkifequal(char square[H][W], char square2[H][W])
     }
   }
   return equal;
-}
-
-void printsquare(char square[H][W])
-{
-  /*Print a 3x3 square*/
-  int i;
-
-  for (i = 0; i < H; i++)
-  {
-    printf("%s\n", square[i]);
-  }
-  printf("\n");
 }
 
 void copysquare(char square[H][W], char squarenew[H][W])
